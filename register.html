@@ -1,0 +1,282 @@
+Absolutely — here’s a matching responsive register.html page with name, email, password, password confirmation, terms acceptance, and social registration buttons.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .register-container {
+      width: 100%;
+      max-width: 440px;
+      background: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+    }
+
+    .terms {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 20px 0;
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .terms input {
+      margin-top: 4px;
+    }
+
+    .terms a,
+    .login a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .terms a:hover,
+    .login a:hover {
+      text-decoration: underline;
+    }
+
+    .register-btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: #667eea;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .register-btn:hover {
+      background: #5568d9;
+      transform: translateY(-1px);
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 25px 0;
+      color: #999;
+      font-size: 14px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #ddd;
+    }
+
+    .social-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-btn {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fff;
+      color: #333;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .social-btn:hover {
+      background: #f5f5f5;
+    }
+
+    .login {
+      text-align: center;
+      margin-top: 25px;
+      color: #777;
+      font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .register-container {
+        padding: 30px 20px;
+      }
+
+      .social-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="register-container">
+    <h1>Create Account</h1>
+    <p class="subtitle">Join us today</p>
+
+    <form action="/register" method="POST">
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="John Doe"
+          autocomplete="name"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@example.com"
+          autocomplete="email"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Create a password"
+          autocomplete="new-password"
+          minlength="8"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm_password"
+          placeholder="Confirm your password"
+          autocomplete="new-password"
+          minlength="8"
+          required
+        >
+      </div>
+
+      <label class="terms">
+        <input type="checkbox" name="terms" required>
+        <span>
+          I agree to the
+          <a href="/terms">Terms of Service</a>
+          and
+          <a href="/privacy">Privacy Policy</a>.
+        </span>
+      </label>
+
+      <button type="submit" class="register-btn">
+        Create Account
+      </button>
+
+    </form>
+
+    <div class="divider">OR</div>
+
+    <div class="social-buttons">
+      <button type="button" class="social-btn">Google</button>
+      <button type="button" class="social-btn">Facebook</button>
+    </div>
+
+    <p class="login">
+      Already have an account?
+      <a href="login.html">Sign in</a>
+    </p>
+  </main>
+
+  <script>
+    const form = document.querySelector("form");
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirm-password");
+
+    form.addEventListener("submit", function (event) {
+      if (password.value !== confirmPassword.value) {
+        event.preventDefault();
+        alert("Passwords do not match.");
+        confirmPassword.focus();
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
+Put register.html in the same folder as your login.html. The Sign in link will then take users back to the login page.
